@@ -15,24 +15,4 @@ public class RegistrationSystem {
         }
         return instance;
     }
-
-    public static Card createCard(CardOwnerType cardOwnerType) {
-        if (cardOwnerType == null) {
-            return null;
-        }
-        Card newCard = CardFactory.createCard(cardOwnerType);
-        newCard.setId(id++);
-        createdCards.put(new Date(), "CARD_ID: " + newCard.getId() + " CARD_TYPE: " + cardOwnerType.name());
-        return newCard;
-    }
-
-    public static boolean cardRefilling(Card card, int money) {
-        if((card == null) || !(card.getClass() == CardWithLimitedMoney.class)
-                || (money <= 0)) {
-            return false;
-        } else {
-            ((CardWithLimitedMoney) card).setMoney(((CardWithLimitedMoney) card).getMoney() + money);
-            return true;
-        }
-    }
 }
