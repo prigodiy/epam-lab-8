@@ -8,8 +8,8 @@ public class CardWithLimitedTimeFactory {
         return new Date(new Date().getTime() + days * 24 * 60 * 60 * 1000);
     }
 
-    public static CardWithLimitedTime createCard(CardType cardType) {
-        switch (cardType) {
+    public static CardWithLimitedTime createCard(CardOwnerType cardOwnerType) {
+        switch (cardOwnerType) {
             case SCHOOL_TEN_DAYS:
                 return new CardWithLimitedTime(0, "SCHOOL", getExpDate(10));
             case SCHOOL_MONTH:

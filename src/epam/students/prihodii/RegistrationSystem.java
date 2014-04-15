@@ -16,13 +16,13 @@ public class RegistrationSystem {
         return instance;
     }
 
-    public static Card createCard(CardType cardType) {
-        if (cardType == null) {
+    public static Card createCard(CardOwnerType cardOwnerType) {
+        if (cardOwnerType == null) {
             return null;
         }
-        Card newCard = CardFactory.createCard(cardType);
+        Card newCard = CardFactory.createCard(cardOwnerType);
         newCard.setId(id++);
-        createdCards.put(new Date(), "CARD_ID: " + newCard.getId() + " CARD_TYPE: " + cardType.name());
+        createdCards.put(new Date(), "CARD_ID: " + newCard.getId() + " CARD_TYPE: " + cardOwnerType.name());
         return newCard;
     }
 

@@ -2,8 +2,8 @@ package epam.students.prihodii;
 
 public class CardWithLimitedTripsFactory {
 
-    public static CardWithLimitedTrips createCard(CardType cardType) {
-        switch (cardType) {
+    public static CardWithLimitedTrips createCard(CardOwnerType cardOwnerType) {
+        switch (cardOwnerType) {
             case SCHOOL_FIVE_TRIPS:
                 return new CardWithLimitedTrips(0, "SCHOOL", 5);
             case SCHOOL_TEN_TRIPS:

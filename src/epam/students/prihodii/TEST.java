@@ -7,7 +7,7 @@ import java.util.TreeMap;
 public class TEST {
     public static void main(String[] args) throws InterruptedException {
         RegistrationSystem registrationSystem = RegistrationSystem.getInstance();
-        Card card = registrationSystem.createCard(CardType.ADULT_FIVE_TRIPS);
+        Card card = registrationSystem.createCard(CardOwnerType.ADULT_FIVE_TRIPS);
         Turnstile turnstile = new Turnstile();
         turnstile.acceptCard(card);
         Thread.sleep(100);
