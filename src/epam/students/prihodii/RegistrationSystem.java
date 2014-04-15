@@ -15,9 +15,4 @@ public class RegistrationSystem {
         }
         return instance;
     }
-
-    @Override
-    public String toString() {
-        return super.toString();    //To change body of overridden methods use File | Settings | File Templates.
-    }
 }
