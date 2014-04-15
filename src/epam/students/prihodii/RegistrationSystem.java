@@ -15,4 +15,5 @@ public class RegistrationSystem {
         }
         return instance;
     }
+
 }
