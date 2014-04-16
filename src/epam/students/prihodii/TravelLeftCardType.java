@@ -1,6 +1,6 @@
 package epam.students.prihodii;
 
-public enum TripLeftCardType {
+public enum TravelLeftCardType {
 
     FIVE,
     TEN;
