@@ -8,4 +8,9 @@ public class CardWithMoneyLimit extends Card {
         super(id, OwnerCardType.ADULT);
         this.balance = balance;
     }
+
+    @Override
+    public boolean acceptable() {
+        return (balance >= 5);
+    }
 }

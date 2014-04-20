@@ -2,10 +2,17 @@ package epam.students.prihodii;
 
 public class CardWithTravelLimit extends Card {
 
-    private TravelLeftCardType travelLimit;
+    private TravelLeftCardType travelsLimit;
+    private int travelsLeft;
 
-    public CardWithTravelLimit(long id, OwnerCardType ownerType, TravelLeftCardType travelLimit) {
+    public CardWithTravelLimit(long id, OwnerCardType ownerType, TravelLeftCardType travelsLimit) {
         super(id, ownerType);
-        this.travelLimit = travelLimit;
+        this.travelsLimit = travelsLimit;
+        this.travelsLeft = travelsLimit.getTravelsLeft();
+    }
+
+    @Override
+    public boolean acceptable() {
+        return (travelsLeft > 0);
     }
 }

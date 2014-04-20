@@ -1,6 +1,6 @@
 package epam.students.prihodii;
 
-public class Card {
+public abstract class Card {
 
     private long id;
     private OwnerCardType ownerType;
@@ -25,4 +25,6 @@ public class Card {
     public void setOwnerType(OwnerCardType ownerType) {
         this.ownerType = ownerType;
     }
+
+    public abstract boolean acceptable();
 }
