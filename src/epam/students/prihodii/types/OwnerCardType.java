@@ -1,4 +1,4 @@
-package epam.students.prihodii;
+package epam.students.prihodii.types;
 
 public enum OwnerCardType {
 

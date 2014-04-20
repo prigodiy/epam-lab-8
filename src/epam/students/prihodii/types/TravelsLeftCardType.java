@@ -1,13 +1,13 @@
-package epam.students.prihodii;
+package epam.students.prihodii.types;
 
-public enum TravelLeftCardType {
+public enum TravelsLeftCardType {
 
     FIVE(5),
     TEN(10);
 
     private int tripsLeft;
 
-    private TravelLeftCardType(int tripsLeft) {
+    private TravelsLeftCardType(int tripsLeft) {
         this.tripsLeft = tripsLeft;
     }
 
