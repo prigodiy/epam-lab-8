@@ -14,17 +14,13 @@ public class CardWithTravelsLimit extends Card {
         this.travelsLeft = travelsLimit.getTravelsLeft();
     }
 
-    public TravelsLeftCardType getTravelsLimit() {
-        return travelsLimit;
-    }
-
     public int getTravelsLeft() {
         return travelsLeft;
     }
 
     @Override
     public boolean accept() {
-        if (travelsLeft > 0) {
+        if (this.getTravelsLeft() > 0) {
             travelsLeft--;
             return true;
         } else {

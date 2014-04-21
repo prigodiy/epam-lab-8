@@ -11,10 +11,12 @@ public class Turnstile {
     }
 
     public boolean acceptCard(Card card) {
-        boolean result = (card == null) ? false : card.accept();
-        if (card != null) {
+        if (card == null) {
+            return false;
+        } else {
+            boolean result = card.accept();
             mainSystem.getPassRegister().addPass(card, result);
+            return result;
         }
-        return result;
     }
 }

@@ -14,9 +14,9 @@ public class MainSystem {
 
     private final static int TRAVEL_COST = 5;
     private static MainSystem instance;
-    private long cardId;
+    private static long cardId;
 
-    private PassRegister passRegister = new PassRegister();
+    private static PassRegister passRegister = new PassRegister();
 
     public static MainSystem getInstance() {
         if (instance == null) {
@@ -31,23 +31,20 @@ public class MainSystem {
 
     public Card createCard(OwnerCardType ownerType, TimeCardType timeType) {
         if (ownerType == null || timeType == null) {
-            throw new IllegalArgumentException();
+            return null;
         }
         return new CardWithTimeLimit(cardId++, ownerType, timeType);
     }
 
     public Card createCard(OwnerCardType ownerType, TravelsLeftCardType travelsLeftCardType) {
         if (ownerType == null || travelsLeftCardType == null) {
-            throw new IllegalArgumentException();
+            return null;
         }
         return new CardWithTravelsLimit(cardId++, ownerType, travelsLeftCardType);
     }
 
-    public Card createCard(OwnerCardType ownerType, int balance) {
-        if (ownerType == null) {
-            throw new IllegalArgumentException();
-        }
-        return new CardWithMoneyLimit(cardId++, ownerType, TRAVEL_COST, balance);
+    public Card createCard(int balance) {
+        return new CardWithMoneyLimit(cardId++, TRAVEL_COST, balance);
     }
 
     public boolean refillingCard(CardWithMoneyLimit card, int money) {

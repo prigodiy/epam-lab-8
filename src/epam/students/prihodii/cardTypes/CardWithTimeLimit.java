@@ -17,17 +17,13 @@ public class CardWithTimeLimit extends Card {
                 24 * 60 * 60 * 1000L);
     }
 
-    public TimeCardType getTypeTimeLimit() {
-        return typeTimeLimit;
-    }
-
     public Date getExpDate() {
         return expDate;
     }
 
     @Override
     public boolean accept() {
-        return new Date().before(expDate);
+        return new Date().before(this.getExpDate());
     }
 
     @Override

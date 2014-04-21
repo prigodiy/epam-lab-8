@@ -4,7 +4,7 @@ import epam.students.prihodii.cardTypes.Card;
 
 import java.util.*;
 
-public class PassRegister {
+class PassRegister {
 
     private List<String> registerHolder = new LinkedList<String>();
 

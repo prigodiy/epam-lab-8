@@ -7,7 +7,7 @@ public class CardWithMoneyLimit extends Card {
     private int balance;
     private int travelCost;
 
-    public CardWithMoneyLimit(long id, OwnerCardType ownerType, int travelCost, int balance) {
+    public CardWithMoneyLimit(long id, int travelCost, int balance) {
         super(id, OwnerCardType.ADULT);
         this.travelCost = travelCost;
         if (balance > 0) {
