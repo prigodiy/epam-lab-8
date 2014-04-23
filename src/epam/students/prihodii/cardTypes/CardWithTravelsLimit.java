@@ -33,7 +33,7 @@ public class CardWithTravelsLimit extends Card {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString())
                 .append(" TRAVELS_LEFT: ")
-                .append(travelsLeft);
+                .append(getTravelsLeft());
         return sb.toString();
     }
 }

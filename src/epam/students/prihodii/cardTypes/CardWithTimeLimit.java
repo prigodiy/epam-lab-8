@@ -31,7 +31,7 @@ public class CardWithTimeLimit extends Card {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString())
                 .append(" EXP_DATE: ")
-                .append(expDate);
+                .append(getExpDate());
         return sb.toString();
     }
 }

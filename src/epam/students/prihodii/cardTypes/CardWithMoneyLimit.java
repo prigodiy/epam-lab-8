@@ -40,7 +40,7 @@ public class CardWithMoneyLimit extends Card {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString())
                 .append(" BALANCE: ")
-                .append(balance);
+                .append(getBalance());
         return sb.toString();
     }
 }
