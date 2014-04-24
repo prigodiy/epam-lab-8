@@ -1,5 +1,11 @@
 package epam.students.prihodii.types;
 
+/**
+ * This enum provides a types of card with remaining passes.
+ *
+ * @author Nickolay Prihodii
+ */
+
 public enum TravelsLeftCardType {
 
     FIVE(5),

@@ -38,7 +38,7 @@ public class PassRegisterTest {
         mainSystem = MainSystem.getInstance();
         turnstile = new Turnstile(mainSystem);
 
-        validTimeLimitCard = mainSystem.createCard(OwnerCardType.STUDENT, TimeCardType.MONTH);
+        validTimeLimitCard = mainSystem.createCard(OwnerCardType.STUDENT, TimeCardType.TEN_DAYS);
         validTimeLimitCardMock = spy(validTimeLimitCard);
         when(((CardWithTimeLimit)validTimeLimitCardMock).getExpDate()).thenReturn(new Date(Long.MAX_VALUE));
 
@@ -47,7 +47,7 @@ public class PassRegisterTest {
         invalidTimeLimitCardMock = spy(invalidTimeLimitCard);
         when(((CardWithTimeLimit)invalidTimeLimitCardMock).getExpDate()).thenReturn(new Date(0));
 
-        validTravelsLeftCard = mainSystem.createCard(OwnerCardType.SCHOOL, TravelsLeftCardType.FIVE);
+        validTravelsLeftCard = mainSystem.createCard(OwnerCardType.SCHOOL, TravelsLeftCardType.TEN);
         invalidTravelsLeftCard = mainSystem.createCard(OwnerCardType.SCHOOL, TravelsLeftCardType.FIVE);
         invalidTravelsLeftCardMock = spy(invalidTravelsLeftCard);
         when(((CardWithTravelsLimit) invalidTravelsLeftCardMock).getTravelsLeft()).thenReturn(0);
@@ -82,7 +82,7 @@ public class PassRegisterTest {
 
     @Test
     public void testGetFullRegister_validTravelsLeftCardRecord() throws Exception {
-        assertEquals("CARD_ID: 2 CARD_OWNER: SCHOOL TRAVELS_LEFT: 4 PASS: true", actual.get(2));
+        assertEquals("CARD_ID: 2 CARD_OWNER: SCHOOL TRAVELS_LEFT: 9 PASS: true", actual.get(2));
     }
 
     @Test
@@ -113,7 +113,7 @@ public class PassRegisterTest {
 
     @Test
     public void testGetTravelsLeftCardPassRegister() throws Exception {
-        assertEquals("CARD_ID: 2 CARD_OWNER: SCHOOL TRAVELS_LEFT: 4 PASS: true", actualTravelsLeftCards.get(0));
+        assertEquals("CARD_ID: 2 CARD_OWNER: SCHOOL TRAVELS_LEFT: 9 PASS: true", actualTravelsLeftCards.get(0));
         assertEquals("CARD_ID: 3 CARD_OWNER: SCHOOL TRAVELS_LEFT: 0 PASS: false", actualTravelsLeftCards.get(1));
     }
 
